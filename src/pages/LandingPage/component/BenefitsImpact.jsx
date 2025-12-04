@@ -63,11 +63,6 @@ const BenefitsImpact = () => {
                   <p className="text-lg text-gray-600 leading-relaxed">
                     {benefit.description}
                   </p>
-
-                  {/* Subtle Arrow */}
-                  <div className="mt-8 flex justify-end">
-                    <ArrowRight className="w-7 h-7 text-gray-400 group-hover:text-emerald-600 group-hover:translate-x-3 transition-all duration-300" />
-                  </div>
                 </div>
               </div>
             );

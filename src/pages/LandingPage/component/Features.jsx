@@ -10,6 +10,7 @@ import {
   BarChart3,
   ChevronRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Features = () => {
   const features = [
@@ -112,19 +113,24 @@ const Features = () => {
                 </p>
 
                 {/* CTA */}
-                <button className="mt-6 inline-flex items-center text-primary font-medium text-sm hover:underline">
-                  Learn More <ChevronRight className="w-4 h-4 ml-1" />
-                </button>
+                <Link to="/coming-soon">
+                  <button className="mt-6 inline-flex items-center text-primary font-medium text-sm hover:underline">
+                    Learn More <ChevronRight className="w-4 h-4 ml-1" />
+                  </button>
+                </Link>
               </div>
             );
           })}
         </div>
 
         {/* CTA Bottom */}
+
         <div className="mt-20 text-center">
-          <button className="bg-primary text-white px-10 py-4 rounded-xl font-semibold shadow hover:shadow-lg transition">
-            Explore All Features
-          </button>
+          <Link to="/coming-soon">
+            <button className="bg-primary text-white px-10 py-4 rounded-xl font-semibold shadow hover:shadow-lg transition">
+              Explore All Features
+            </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-primary-dark text-gray-300">
@@ -36,9 +36,12 @@ const Footer = () => {
                 "How It Works",
               ].map((item, i) => (
                 <li key={i}>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <Link
+                    to="/coming-soon"
+                    className="hover:text-white transition-colors"
+                  >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -55,9 +58,12 @@ const Footer = () => {
                 "Data Protection",
               ].map((item, i) => (
                 <li key={i}>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <Link
+                    to="/coming-soon"
+                    className="hover:text-white transition-colors"
+                  >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

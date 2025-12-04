@@ -6,6 +6,7 @@ import {
   Database,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Compliance = () => {
   const features = [
@@ -66,10 +67,12 @@ const Compliance = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <button className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-light transition-colors">
-            <span>Access Monitoring Dashboard</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
+          <Link to="/coming-soon">
+            <button className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-light transition-colors">
+              <span>Access Monitoring Dashboard</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

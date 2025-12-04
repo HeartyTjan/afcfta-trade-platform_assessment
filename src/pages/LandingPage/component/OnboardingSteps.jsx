@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckCircle } from "lucide-react";
-
+import { Link } from "react-router";
 const OnboardingSteps = () => {
   const steps = [
     {
@@ -62,10 +62,12 @@ const OnboardingSteps = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <button className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-light transition-colors">
-            <span>Start Your Registration</span>
-            <CheckCircle className="w-5 h-5" />
-          </button>
+          <Link to="/get-started">
+            <button className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-light transition-colors">
+              <span>Start Your Registration</span>
+              <CheckCircle className="w-5 h-5" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

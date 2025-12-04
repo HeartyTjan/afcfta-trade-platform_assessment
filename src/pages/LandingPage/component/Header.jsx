@@ -19,14 +19,18 @@ const Header = () => {
     {
       label: "Monitoring Dashboard",
       icon: <BarChart3 className="w-4 h-4" />,
-      href: "#",
+      href: "/Coming-soon",
     },
     {
       label: "Knowledge & Support Hub",
       icon: <BookOpen className="w-4 h-4" />,
-      href: "#",
+      href: "/coming-soon",
     },
-    { label: "About AfCFTA", icon: <Info className="w-4 h-4" />, href: "#" },
+    {
+      label: "About AfCFTA",
+      icon: <Info className="w-4 h-4" />,
+      href: "/coming-soon",
+    },
   ];
 
   return (
@@ -80,9 +84,9 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="flex items-center space-x-2 text-gray-700 hover:text-primary transition-colors group"
               >
                 <span className="text-primary/70 group-hover:text-primary transition-colors">
@@ -90,16 +94,18 @@ const Header = () => {
                 </span>
                 <span className="font-medium text-sm">{item.label}</span>
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></div>
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Auth Buttons - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="flex items-center space-x-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-              <LogIn className="w-4 h-4" />
-              <span>Login</span>
-            </button>
+            <Link to="/coming-soon">
+              <button className="flex items-center space-x-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+                <LogIn className="w-4 h-4" />
+                <span>Login</span>
+              </button>
+            </Link>
             <div className="w-px h-6 bg-gray-300"></div>
             <Link to="/get-started">
               <button className="flex items-center space-x-2 px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent-darker transition-colors">
@@ -140,14 +146,19 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-3 pt-4 border-t">
-                <button className="flex items-center justify-center space-x-2 p-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                  <LogIn className="w-4 h-4" />
-                  <span>Login</span>
-                </button>
-                <button className="flex items-center justify-center space-x-2 p-3 bg-accent text-white rounded-lg hover:bg-accent-darker transition-colors">
-                  <UserPlus className="w-4 h-4" />
-                  <span>Get Started</span>
-                </button>
+                <Link to="/coming-soon">
+                  <button className="flex items-center justify-center space-x-2 p-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+                    <LogIn className="w-4 h-4" />
+                    <span>Login</span>
+                  </button>
+                </Link>
+
+                <Link to="/get-started">
+                  <button className="flex items-center justify-center space-x-2 p-3 bg-accent text-white rounded-lg hover:bg-accent-darker transition-colors">
+                    <UserPlus className="w-4 h-4" />
+                    <span>Get Started</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
