@@ -34,8 +34,8 @@ const SurveyQuestions = () => {
       id: 2,
       text: "Is your business registered with CAC?",
       options: [
-        { text: "Yes, fully registered", score: 20 },
-        { text: "Registration in progress", score: 10 },
+        { text: "Yes, fully registered", score: 30 },
+        { text: "Registration in progress", score: 20 },
         { text: "Not registered", score: 0 },
       ],
       category: "Legal",
@@ -44,7 +44,7 @@ const SurveyQuestions = () => {
       id: 3,
       text: "Do you have NIN verification?",
       options: [
-        { text: "Yes, fully verified", score: 15 },
+        { text: "Yes, fully verified", score: 20 },
         { text: "No, not yet", score: 0 },
       ],
       category: "Identity",
@@ -53,8 +53,8 @@ const SurveyQuestions = () => {
       id: 4,
       text: "Have you exported goods/services internationally before?",
       options: [
-        { text: "Yes, to multiple countries", score: 15 },
-        { text: "Yes, within Africa", score: 10 },
+        { text: "Yes, to multiple countries", score: 20 },
+        { text: "Yes, within Africa", score: 15 },
         { text: "No, never exported", score: 0 },
       ],
       category: "Experience",
@@ -63,81 +63,11 @@ const SurveyQuestions = () => {
       id: 5,
       text: "Are your business documents (licenses, permits) up to date?",
       options: [
-        { text: "All documents current", score: 10 },
+        { text: "All documents current", score: 20 },
         { text: "Some need renewal", score: 5 },
         { text: "Not sure", score: 0 },
       ],
       category: "Compliance",
-    },
-    {
-      id: 6,
-      text: "Do you have experience with international trade documentation?",
-      options: [
-        { text: "Extensive experience", score: 10 },
-        { text: "Some experience", score: 5 },
-        { text: "No experience", score: 0 },
-      ],
-      category: "Experience",
-    },
-    {
-      id: 7,
-      text: "Is your business financially prepared for export activities?",
-      options: [
-        { text: "Fully prepared", score: 10 },
-        { text: "Partially prepared", score: 5 },
-        { text: "Not prepared", score: 0 },
-      ],
-      category: "Finance",
-    },
-    {
-      id: 8,
-      text: "Do you have a dedicated team for international trade?",
-      options: [
-        { text: "Yes, experienced team", score: 10 },
-        { text: "Small team", score: 5 },
-        { text: "No dedicated team", score: 0 },
-      ],
-      category: "Capacity",
-    },
-    {
-      id: 9,
-      text: "Are you familiar with AfCFTA rules and regulations?",
-      options: [
-        { text: "Very familiar", score: 10 },
-        { text: "Somewhat familiar", score: 5 },
-        { text: "Not familiar", score: 0 },
-      ],
-      category: "Knowledge",
-    },
-    {
-      id: 10,
-      text: "Do you have quality certifications (ISO, NAFDAC, etc.)?",
-      options: [
-        { text: "Multiple certifications", score: 10 },
-        { text: "One certification", score: 5 },
-        { text: "No certifications", score: 0 },
-      ],
-      category: "Standards",
-    },
-    {
-      id: 11,
-      text: "Is your product/service competitively priced for African markets?",
-      options: [
-        { text: "Highly competitive", score: 10 },
-        { text: "Moderately competitive", score: 5 },
-        { text: "Not competitive", score: 0 },
-      ],
-      category: "Market",
-    },
-    {
-      id: 12,
-      text: "Do you have a market entry strategy for African countries?",
-      options: [
-        { text: "Comprehensive strategy", score: 10 },
-        { text: "Basic strategy", score: 5 },
-        { text: "No strategy", score: 0 },
-      ],
-      category: "Strategy",
     },
   ];
 
@@ -167,6 +97,10 @@ const SurveyQuestions = () => {
     }
   };
 
+  const gotoRegister = () => {
+    navigate("/auth/register");
+  };
+
   const calculateResults = () => {
     let totalScore = 0;
     const categoryScores = {};
@@ -176,7 +110,6 @@ const SurveyQuestions = () => {
       if (answer) {
         totalScore += answer.score;
 
-        // Track category scores
         if (!categoryScores[question.category]) {
           categoryScores[question.category] = { total: 0, max: 0 };
         }
@@ -187,7 +120,7 @@ const SurveyQuestions = () => {
       }
     });
 
-    const percentage = Math.round((totalScore / 120) * 100);
+    const percentage = Math.round((totalScore / 100) * 100);
 
     // Determine readiness level
     let readinessLevel = "Beginner";
@@ -481,7 +414,7 @@ const SurveyQuestions = () => {
 
                     {results.percentage === 100 || results.percentage > 100 ? (
                       <button
-                        onClick={navigate("/auth/register")}
+                        onClick={gotoRegister}
                         className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-emerald-500 text-white rounded-xl font-semibold hover:bg-emerald-600 transition-colors"
                       >
                         <span>Continue to Registration</span>
