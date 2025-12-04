@@ -7,6 +7,7 @@ import {
   Globe,
   ChevronRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const QuickActions = () => {
   const actions = [
@@ -133,11 +134,12 @@ const QuickActions = () => {
                   )}
                 </div>
 
-                {/* Action Button */}
-                <button className="group/btn w-full flex items-center justify-between px-6 py-4 bg-gray-50 hover:bg-primary text-gray-800 hover:text-white rounded-xl transition-all duration-300">
-                  <span className="font-semibold">{action.buttonText}</span>
-                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
-                </button>
+                <Link to="/coming-soon">
+                  <button className="group/btn w-full flex items-center justify-between px-6 py-4 bg-gray-50 hover:bg-primary text-gray-800 hover:text-white rounded-xl transition-all duration-300">
+                    <span className="font-semibold">{action.buttonText}</span>
+                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
+                  </button>
+                </Link>
               </div>
 
               {/* Hover Effect Overlay */}
@@ -197,10 +199,12 @@ const QuickActions = () => {
           <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Join thousands of Nigerian businesses already trading under AfCFTA
           </p>
-          <button className="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors">
-            Begin Your Application
-            <ChevronRight className="w-5 h-5" />
-          </button>
+          <Link to="/get-started">
+            <button className="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors">
+              Begin Your Application
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const stats = [
@@ -78,15 +79,20 @@ const Hero = () => {
           </div>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-5 justify-center items-center">
-            <button className="group relative inline-flex items-center px-8 py-5 bg-gradient-to-r from-primary to-accent text-white font-semibold text-lg rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-              <span>Get Started Now</span>
-              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              <div className="absolute inset-0 rounded-2xl bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
-            </button>
+            <Link to="/get-started">
+              <button className="group relative inline-flex items-center px-8 py-5 bg-gradient-to-r from-primary to-accent text-white font-semibold text-lg rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+                <span>Get Started Now</span>
+                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                <div className="absolute inset-0 rounded-2xl bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
+              </button>
+            </Link>
 
-            <button className="inline-flex items-center px-8 py-5 border-2 border-gray-300 text-gray-800 font-semibold text-lg rounded-2xl hover:border-gray-400 hover:bg-gray-50 transition-all">
-              Watch Overview (2 min)
-            </button>
+            <Link to="/coming-soon">
+              <button className="inline-flex items-center px-8 py-5 border-2 border-gray-300 text-gray-800 font-semibold text-lg rounded-2xl hover:border-gray-400 hover:bg-gray-50 transition-all">
+                Learn More
+                <ArrowRight className="ml-3 w-6 h-6 text-gray-600" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>
